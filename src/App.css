@@ -90,12 +90,18 @@
 
 /* nav bar components ends */
 
-/* Home page  */
+/*Page 1 Home page  */
 .homePage {
   border: 2px solid green;
   width: 100%;
   min-width: 280px;
   height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 /* top image in the home page */
@@ -108,7 +114,6 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  
 }
 /* content in the top Image div */
 .contentSection {
@@ -122,8 +127,13 @@
   margin: 0 0 0 100px;
 }
 
-.contentSection :nth-child(n){
+.contentSection :nth-child(n) {
   font-size: 30px;
+}
+
+.contentSection :nth-child(4) {
+  font-size: 20px;
+  margin-top: 50px;
 }
 /* image div in the topImage section */
 .imageSection {
@@ -140,13 +150,57 @@
 }
 
 /* about card section in the home page */
-.aboutSection{
+.aboutSection {
   border: 2px solid green;
   width: 100%;
   min-width: 280px;
-  height: 400px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* card inside about div */
+.aboutCard {
+  width: 80%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aboutCard :nth-child(1) {
+  font-size: 35px;
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+.aboutCard :nth-child(2) {
+  font-size: 25px;
+  padding: 20px;
+}
+
+.aboutCard :nth-child(3) {
+  font-size: 25px;
+  padding: 20px;
+}
+
+
+/* to download resume  */
+.resumeButton{
+  width: fit-content;
+  height: fit-content;
+  margin: 0 0 20px 0;
+}
+
+
+/* Page 2 Skills */
+.skillPage{
+  border: 2px solid green;
+  width: 100%;
+  min-width: 280px;
+  height: 100vh;
 }
