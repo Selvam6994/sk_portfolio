@@ -63,6 +63,7 @@ function Navbar() {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <Paper elevation={8}>
+                 
                   <Button
                     className="navOptions"
                     style={{
@@ -75,6 +76,7 @@ function Navbar() {
                   >
                     {options.name}
                   </Button>
+          
                 </Paper>
               </motion.div>
             </motion.div>
