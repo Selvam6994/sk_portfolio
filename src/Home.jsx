@@ -6,16 +6,26 @@ import { motion } from "framer-motion";
 import DownloadIcon from "@mui/icons-material/Download";
 
 function Home() {
-  const responsiveHomePage= useMediaQuery('(min-width:1205px)')
+  const responsiveHomePage = useMediaQuery("(min-width:1205px)");
   return (
     <div className="homePage" id="home">
-      <div className={responsiveHomePage==true?"topImage":"resposiveTopImage"}>
+      <div
+        className={
+          responsiveHomePage == true ? "topImage" : "resposiveTopImage"
+        }
+      >
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", duration: 2.5, delay: 0.5 }}
         >
-          <div className={responsiveHomePage==true?"contentSection":"responsiveContentSection"}>
+          <div
+            className={
+              responsiveHomePage == true
+                ? "contentSection"
+                : "responsiveContentSection"
+            }
+          >
             <span>Hi!</span>
             <span>I'm Selva Kumar</span>
             <span>
@@ -25,11 +35,19 @@ function Home() {
                   sequence={["Design", 2000, "Develop", 2000]}
                   wrapper="span"
                   speed={50}
-                  style={{
-                    fontSize: "35px",
-                    display: "inline-block",
-                    color: "green",
-                  }}
+                  style={
+                    responsiveHomePage == true
+                      ? {
+                          fontSize: "35px",
+                    
+                          color: "green",
+                        }
+                      : {
+                          fontSize: "20px",
+                         
+                          color: "green",
+                        }
+                  }
                   repeat={Infinity}
                 />{" "}
                 <span>web apps.</span>
@@ -49,7 +67,13 @@ function Home() {
                   href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new"
                   target="blank"
                 >
-                  <Button style={{ fontSize: "25px", color: "whitesmoke" }}>
+                  <Button
+                    style={
+                      responsiveHomePage == true
+                        ? { fontSize: "25px", color: "whitesmoke" }
+                        : { fontSize: "15px", color: "whitesmoke" }
+                    }
+                  >
                     Contact Me
                   </Button>
                 </a>
@@ -62,7 +86,13 @@ function Home() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", duration: 2.5, delay: 0.5 }}
         >
-          <div className={responsiveHomePage==true?"imageSection":"responsiveImageSection"}>
+          <div
+            className={
+              responsiveHomePage == true
+                ? "imageSection"
+                : "responsiveImageSection"
+            }
+          >
             <img src={myImage} alt="Profile Image" />
           </div>
         </motion.div>

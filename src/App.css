@@ -96,7 +96,7 @@ html {
 .homePage {
   border: 2px solid green;
   width: 100%;
-  min-width:fit-content;
+  min-width:280px;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -136,7 +136,6 @@ html {
 .contentSection {
   border: 2px solid green;
   width: 500px;
-  min-width:280px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -157,7 +156,6 @@ html {
 /* content section media qurery */
 .responsiveContentSection {
   border: 2px solid green;
-  width: 500px;
   min-width: 280px;
   height: 400px;
   display: flex;
@@ -166,7 +164,7 @@ html {
   align-items: center;
 }
 .responsiveContentSection :nth-child(n) {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .responsiveContentSection :nth-child(4) {
@@ -193,16 +191,15 @@ html {
 /* image section media query */
 .responsiveImageSection {
   border: 2px solid green;
-  width: 500px;
   min-width: 280px;
-  height: 400px;
+  height: 300px;
   z-index: -1;
 }
 
 .responsiveImageSection img {
-  width: 100%;
-  min-width: 280px;
-  height: 400px;
+ width: 280px;
+  height: 300px;
+  min-height: 200px;
   object-fit: cover;
 }
 /* about card section in the home page */
