@@ -96,7 +96,7 @@ html {
 .homePage {
   border: 2px solid green;
   width: 100%;
-  min-width:280px;
+  min-width: 280px;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -110,7 +110,7 @@ html {
 /* top image in the home page */
 .topImage {
   width: 100%;
-  min-width:280px;
+  min-width: 280px;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -119,11 +119,24 @@ html {
   flex-wrap: wrap;
   margin-top: 100px;
 }
-/* top image media query */
-.resposiveTopImage {
+/* top image media query for tab */
+.tabResponseTopImage {
+  border: 5px solid rgb(0, 8, 255);
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+/* top image media query for mobile */
+.mobileResponseTopImage {
   border: 2px solid red;
   width: 100%;
-  min-width:280px;
+  min-width: 280px;
   height: fit-content;
   display: flex;
   flex-direction: column-reverse;
@@ -148,35 +161,41 @@ html {
   font-size: 30px;
 }
 
-.contentSection :nth-child(4) {
-  font-size: 20px;
-  margin-top: 50px;
+/* content section media query for tab */
+.tabResponseContentSection {
+  border: 2px solid rgb(128, 6, 0);
+  width: 320px;
+  min-width: 280px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 100px;
+}
+.tabResponseContentSection :nth-child(n) {
+  font-size: 25px;
 }
 
-/* content section media qurery */
-.responsiveContentSection {
+/* content section media qurery for mobile */
+.mobileResponseContentSection {
   border: 2px solid green;
-  min-width: 280px;
+  width: 280px;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.responsiveContentSection :nth-child(n) {
+.mobileResponseContentSection :nth-child(n) {
   font-size: 20px;
-}
-
-.responsiveContentSection :nth-child(4) {
-  font-size: 20px;
-  margin-top: 50px;
 }
 
 /* image div in the topImage section */
 .imageSection {
   border: 2px solid green;
   width: 500px;
-  min-width:280px;
+  min-width: 280px;
   height: 400px;
   z-index: -1;
   margin-right: 100px;
@@ -184,20 +203,37 @@ html {
 
 .imageSection img {
   width: 100%;
-  min-width:280px;
+  min-width: 280px;
   height: 400px;
   object-fit: cover;
 }
-/* image section media query */
-.responsiveImageSection {
-  border: 2px solid green;
+/* image section media query for tab*/
+.tabResponseImageSection {
+  border: 5px solid rgb(128, 0, 117);
+  width: 300px;
   min-width: 280px;
+  height: 300px;
+  z-index: -1;
+  margin: 0 100px 0 0;
+}
+
+.tabResponseImageSection img {
+  width: 300px;
+  height: 300px;
+  min-height: 200px;
+  object-fit: cover;
+}
+
+/* image section media query for mobile*/
+.mobileResponseImageSection {
+  border: 2px solid green;
+  width: 280px;
   height: 300px;
   z-index: -1;
 }
 
-.responsiveImageSection img {
- width: 280px;
+.mobileResponseImageSection img {
+  width: 280px;
   height: 300px;
   min-height: 200px;
   object-fit: cover;
@@ -240,6 +276,38 @@ html {
   font-size: 25px;
   padding: 20px;
 }
+
+/* Mobile responsive about card */
+.aboutCardMobile{
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 20px;
+}
+
+.aboutCardMobile span {
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+
+.aboutCardMobile span 
+  :nth-child(2) {
+  font-size: 20px;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.aboutCardMobile span 
+  :nth-child(3) {
+  font-size: 20px;
+  padding: 50px;
+}
+
 
 /* to download resume  */
 .resumeButton {

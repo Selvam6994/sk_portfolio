@@ -6,14 +6,22 @@ import { motion } from "framer-motion";
 import DownloadIcon from "@mui/icons-material/Download";
 
 function Home() {
-  const responsiveHomePage = useMediaQuery("(min-width:1205px)");
+  const responsiveMobileHomePage = useMediaQuery("(min-width:845px)");
+
+  const responsiveTabHomePage = useMediaQuery("(min-width:1205px)");
+
   return (
     <div className="homePage" id="home">
       <div
         className={
-          responsiveHomePage == true ? "topImage" : "resposiveTopImage"
+          responsiveMobileHomePage != true
+            ? "mobileResponseTopImage "
+            : responsiveTabHomePage != true
+            ? "tabResponseTopImage"
+            : "topImage"
         }
       >
+        {/* mobileResponseTopImage */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -21,11 +29,14 @@ function Home() {
         >
           <div
             className={
-              responsiveHomePage == true
-                ? "contentSection"
-                : "responsiveContentSection"
+              responsiveMobileHomePage != true
+                ? "mobileResponseContentSection"
+                : responsiveTabHomePage != true
+                ? "tabResponseContentSection"
+                : "contentSection "
             }
           >
+            {/* mobileResponseContentSection */}
             <span>Hi!</span>
             <span>I'm Selva Kumar</span>
             <span>
@@ -35,19 +46,9 @@ function Home() {
                   sequence={["Design", 2000, "Develop", 2000]}
                   wrapper="span"
                   speed={50}
-                  style={
-                    responsiveHomePage == true
-                      ? {
-                          fontSize: "35px",
-                    
-                          color: "green",
-                        }
-                      : {
-                          fontSize: "20px",
-                         
-                          color: "green",
-                        }
-                  }
+                  style={{
+                    color: "green",
+                  }}
                   repeat={Infinity}
                 />{" "}
                 <span>web apps.</span>
@@ -69,7 +70,7 @@ function Home() {
                 >
                   <Button
                     style={
-                      responsiveHomePage == true
+                      responsiveMobileHomePage == true
                         ? { fontSize: "25px", color: "whitesmoke" }
                         : { fontSize: "15px", color: "whitesmoke" }
                     }
@@ -88,9 +89,11 @@ function Home() {
         >
           <div
             className={
-              responsiveHomePage == true
-                ? "imageSection"
-                : "responsiveImageSection"
+              responsiveMobileHomePage != true
+                ? "mobileResponseImageSection"
+                : responsiveTabHomePage != true
+                ? "tabResponseImageSection"
+                : "imageSection "
             }
           >
             <img src={myImage} alt="Profile Image" />
@@ -99,14 +102,14 @@ function Home() {
       </div>
       <div className="aboutSection">
         <motion.div
-          className="aboutCard"
+          className={responsiveMobileHomePage!=true?"aboutCardMobile":"aboutCard"}
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: "spring", duration: 2, delay: 0.5 }}
         >
           <Paper
             elevation={16}
-            className="aboutCard"
+            className="aboutCardMobile"
             style={{ borderRadius: "10px" }}
           >
             <span>About Me</span>
