@@ -96,7 +96,7 @@ html {
 .homePage {
   border: 2px solid green;
   width: 100%;
-  min-width: 280px;
+  min-width:fit-content;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -110,7 +110,7 @@ html {
 /* top image in the home page */
 .topImage {
   width: 100%;
-  min-width: 280px;
+  min-width:280px;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -119,10 +119,24 @@ html {
   flex-wrap: wrap;
   margin-top: 100px;
 }
+/* top image media query */
+.resposiveTopImage {
+  border: 2px solid red;
+  width: 100%;
+  min-width:280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
 /* content in the top Image div */
 .contentSection {
   border: 2px solid green;
   width: 500px;
+  min-width:280px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -139,10 +153,32 @@ html {
   font-size: 20px;
   margin-top: 50px;
 }
+
+/* content section media qurery */
+.responsiveContentSection {
+  border: 2px solid green;
+  width: 500px;
+  min-width: 280px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.responsiveContentSection :nth-child(n) {
+  font-size: 30px;
+}
+
+.responsiveContentSection :nth-child(4) {
+  font-size: 20px;
+  margin-top: 50px;
+}
+
 /* image div in the topImage section */
 .imageSection {
   border: 2px solid green;
   width: 500px;
+  min-width:280px;
   height: 400px;
   z-index: -1;
   margin-right: 100px;
@@ -150,10 +186,25 @@ html {
 
 .imageSection img {
   width: 100%;
+  min-width:280px;
   height: 400px;
   object-fit: cover;
 }
+/* image section media query */
+.responsiveImageSection {
+  border: 2px solid green;
+  width: 500px;
+  min-width: 280px;
+  height: 400px;
+  z-index: -1;
+}
 
+.responsiveImageSection img {
+  width: 100%;
+  min-width: 280px;
+  height: 400px;
+  object-fit: cover;
+}
 /* about card section in the home page */
 .aboutSection {
   border: 2px solid green;
@@ -169,7 +220,6 @@ html {
 /* card inside about div */
 .aboutCard {
   width: 90%;
-  min-width: 280px;
   height: fit-content;
   display: flex;
   flex-direction: column;

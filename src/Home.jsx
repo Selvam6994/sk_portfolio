@@ -1,20 +1,21 @@
 import React from "react";
 import myImage from "../src/assets/Images/Profile image/myImage-removebg-preview.png";
-import { Button, Paper } from "@mui/material";
+import { Button, Paper, useMediaQuery } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import DownloadIcon from "@mui/icons-material/Download";
 
 function Home() {
+  const responsiveHomePage= useMediaQuery('(min-width:1205px)')
   return (
     <div className="homePage" id="home">
-      <div className="topImage">
+      <div className={responsiveHomePage==true?"topImage":"resposiveTopImage"}>
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", duration: 2.5, delay: 0.5 }}
         >
-          <div className="contentSection">
+          <div className={responsiveHomePage==true?"contentSection":"responsiveContentSection"}>
             <span>Hi!</span>
             <span>I'm Selva Kumar</span>
             <span>
@@ -61,7 +62,7 @@ function Home() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", duration: 2.5, delay: 0.5 }}
         >
-          <div className="imageSection">
+          <div className={responsiveHomePage==true?"imageSection":"responsiveImageSection"}>
             <img src={myImage} alt="Profile Image" />
           </div>
         </motion.div>
