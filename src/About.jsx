@@ -91,26 +91,39 @@ function About({ changeTheme, displayContent }) {
       ) : (
         ""
       )}
-      <div
-        className={
-          mobileResAboutpage == true
-            ? "aboutImageSection"
-            : "resAboutImageSection"
-        }
-      >
-        <img
+      {displayContent == true ? (
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 2.5,
+            delay: 0.5,
+          }}
           className={
-            mobileResAboutpage == true ? "aboutPageImage" : "resAboutPageImage"
+            mobileResAboutpage == true
+              ? "aboutImageSection"
+              : "resAboutImageSection"
           }
-          src={webImage}
-          alt="image"
-          style={
-            changeTheme == true
-              ? { border: "5px solid #6D8654" }
-              : { border: "" }
-          }
-        />
-      </div>
+        >
+          <img
+            className={
+              mobileResAboutpage == true
+                ? "aboutPageImage"
+                : "resAboutPageImage"
+            }
+            src={webImage}
+            alt="image"
+            style={
+              changeTheme == true
+                ? { border: "5px solid #6D8654" }
+                : { border: "" }
+            }
+          />
+        </motion.div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -256,7 +256,7 @@ html {
 }
 
 /* THEME CHANGE */
-.description .typeAnimationTheme :nth-child(n) {
+.mobileResDescription .typeAnimationTheme :nth-child(n) {
   color: #6d8654;
 }
 

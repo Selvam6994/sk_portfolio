@@ -24,8 +24,8 @@ function Home({ changeTheme }) {
             resHomepage == true
               ? "description"
               : mobileReshomepage == true
-              ? "resDescription"
-              : "mobileResDescription"
+                ? "resDescription"
+                : "mobileResDescription"
           }
         >
           <span>Hi!</span>
@@ -62,8 +62,8 @@ function Home({ changeTheme }) {
           resHomepage == true
             ? "imageSection"
             : mobileReshomepage == true
-            ? "resImageSection"
-            : "mobileResImageSection"
+              ? "resImageSection"
+              : "mobileResImageSection"
         }
       >
         <img
@@ -71,8 +71,8 @@ function Home({ changeTheme }) {
             resHomepage == true
               ? "image"
               : mobileReshomepage == true
-              ? "resImage"
-              : "mobileResImage"
+                ? "resImage"
+                : "mobileResImage"
           }
           src={myImage}
           alt="SK Image"
