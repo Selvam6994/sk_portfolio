@@ -167,7 +167,7 @@ html {
   align-items: center;
 }
 
-/* sub div in side content */
+/* sub div inside content */
 .description {
   width: 80%;
   min-width: 280px;
@@ -233,12 +233,12 @@ html {
 
 /* mobile responsive text content in content div*/
 .mobileResDescription {
-  width: 50%;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   margin: 50px 0 0 0;
 }
 
@@ -251,7 +251,7 @@ html {
   color: #131411;
 }
 
-.mobileResDescription.typeAnimation :nth-child(n) {
+.mobileResDescription .typeAnimation :nth-child(n) {
   color: #131411;
 }
 
