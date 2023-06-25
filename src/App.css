@@ -538,7 +538,7 @@ html {
 /* work page starts */
 .workPage {
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   flex-wrap: wrap;
   background-color: #6d8654;
   display: flex;
@@ -547,6 +547,118 @@ html {
   align-items: center;
 }
 
+.workPage900px {
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  background-color: #6d8654;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.workImageSection {
+  width: 50%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* media query @900px */
+.myWork {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #131411;
+  font-size: 40px;
+  margin: 100px 0 0 0;
+}
+
+/* @1000px  */
+.myWorkRes1200px {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #131411;
+  font-size: 40px;
+}
+.myWorkImagePaper {
+  width: 60%;
+  height: 60%;
+}
+/* media query @900px */
+.resMyWorkImagePaper {
+  width: 100%;
+  height: 100%;
+}
+
+.myWorkImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.aboutWork {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.aboutWork :nth-child(1) {
+  font-size: 40px;
+  color: #131411;
+}
+
+.aboutWork :nth-child(2) {
+  font-size: 30px;
+  color: #dadddf;
+}
+
+/* media query @900px */
+.resAboutWork {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.resAboutWork :nth-child(1) {
+  font-size: 35px;
+  color: #131411;
+}
+
+.resAboutWork :nth-child(2) {
+  font-size: 25px;
+  color: #dadddf;
+}
+.visitWork {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.visitWork :nth-child(1) {
+  font-size: 25px;
+  color: #1e392a;
+}
 /* work page ends */
 
 /* Contact page starts */

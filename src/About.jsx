@@ -18,6 +18,7 @@ function About({ changeTheme, displayContent }) {
       }
     >
       {displayContent == true ? (
+        <>
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -88,42 +89,44 @@ function About({ changeTheme, displayContent }) {
             </Paper>
           </div>
         </motion.div>
+         <motion.div
+         initial={{ opacity: 0, scale: 0.5 }}
+         animate={{ opacity: 1, scale: 1 }}
+         transition={{
+           delay: 1,
+           duration: 0.5,
+           ease: [0, 0.71, 0.2, 1.01],
+           scale: {
+             type: "spring",
+             damping: 10,
+             stiffness: 50,
+             restDelta: 0.001,
+           },
+         }}
+         className={
+           mobileResAboutpage == true
+             ? "aboutImageSection"
+             : "resAboutImageSection"
+         }
+       >
+         <img
+           className={
+             mobileResAboutpage == true ? "aboutPageImage" : "resAboutPageImage"
+           }
+           src={webImage}
+           alt="image"
+           style={
+             changeTheme == true
+               ? { border: "5px solid #6D8654" }
+               : { border: "" }
+           }
+         />
+       </motion.div>
+       </>
       ) : (
         ""
       )}
-      {displayContent == true ? (
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            type: "spring",
-            duration: 2.5,
-            delay: 0.5,
-          }}
-          className={
-            mobileResAboutpage == true
-              ? "aboutImageSection"
-              : "resAboutImageSection"
-          }
-        >
-          <img
-            className={
-              mobileResAboutpage == true
-                ? "aboutPageImage"
-                : "resAboutPageImage"
-            }
-            src={webImage}
-            alt="image"
-            style={
-              changeTheme == true
-                ? { border: "5px solid #6D8654" }
-                : { border: "" }
-            }
-          />
-        </motion.div>
-      ) : (
-        ""
-      )}
+     
     </div>
   );
 }

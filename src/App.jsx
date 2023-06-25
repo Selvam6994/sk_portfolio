@@ -48,7 +48,7 @@ function App() {
   const scrollforAboutPage = () => {
     if (window.scrollY >= 600) {
       setaboutTransition(true);
-    } else if (window.scrollY <= 600) {
+    } else if (window.scrollY <= 100) {
       setaboutTransition(false);
     }
   };
@@ -266,7 +266,7 @@ function App() {
         <Home changeTheme={theme}></Home>
         <About displayContent={aboutTransition} changeTheme={theme}></About>
         <Expertise displayContent={expertiseTransition} changeTheme={theme}></Expertise>
-        <Work></Work>
+        <Work changeTheme={theme}></Work>
         <Contact></Contact>
       </div>
     </div>
