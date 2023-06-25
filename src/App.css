@@ -5,351 +5,560 @@
   padding: 0;
   font-family: "Poppins";
 }
+
 html {
   scroll-behavior: smooth;
 }
-/* Css property for nav bar */
-.navBar {
-  position: fixed;
+
+/* Page section in app.jsx file */
+/* common for every pages */
+.pageSection {
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+}
+
+/* Nav bar properties starts */
+.navBarSection {
   width: 100%;
   min-width: 280px;
   height: 100px;
+  position: fixed;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-/* nav bar components starts */
-/* Logo on left corner of navBar */
-/* outer div */
-.logoSection {
-  width: 10%;
-  min-width: 100px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-/* image inside the logoSection div */
-.logoSection img {
-  width: 100px;
-}
 
-/* Nav options div */
-.optionsSection {
+.navBar {
   width: 50%;
   min-width: 280px;
-  height: 100px;
+  height: 100%;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons {
+  width: 145px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.themeButton {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.themeIcon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* media query @ 1320px */
+.resNavBar {
+  width: 100%;
+  min-width: 280px;
+  height: 100%;
+  border-radius: 20px;
   flex-wrap: wrap;
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* inside optionsSection */
-
-.navOptions:hover {
-  color: #00ff08;
-  font-size: 20px;
+.resButtons {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* mobile options wraper div */
-.responsiveNavOptions {
+/* mobile resposive navbar section */
+.resMobileNavBarSection {
+  width: fit-content;
+  min-width: 280px;
+  height: fit-content;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 0.5rem;
+  right: 0;
+}
+
+.dropDown {
   width: 150px;
-  min-width: 150px;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  padding: 10px;
   margin-right: 20px;
-  gap: 1rem;
 }
 
-/*mobile media menu button */
-.menuButtonSection {
-  width: 100%;
-  height: 100px;
+.dropDownOption {
+  width: 100px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* onClick menu button display below dropdown */
-.menuOptionsSection {
-  width: 150px;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+/* Nav bar properties ends */
 
-/*css for buttons in the drop down div written inline*/
-
-/* nav bar components ends */
-
-/*Page 1 Home page  */
+/* Home page starts */
 .homePage {
-  border: 2px solid green;
   width: 100%;
-  min-width: 280px;
-  height: fit-content;
+  flex-wrap: wrap;
+  background-color: #6d8654;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 0 0 10rem 0;
 }
 
-/* top image in the home page */
-.topImage {
+/* responsive mobile homepage */
+.resHomePage {
   width: 100%;
-  min-width: 280px;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-  margin-top: 100px;
-}
-/* top image media query for tab */
-.tabResponseTopImage {
-  border: 5px solid rgb(0, 8, 255);
-  width: 100%;
-  min-width: 280px;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 100px;
-}
-/* top image media query for mobile */
-.mobileResponseTopImage {
-  border: 2px solid red;
-  width: 100%;
-  min-width: 280px;
-  height: fit-content;
+  background-color: #6d8654;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  top: 0;
+}
+
+/*  text section inside this div */
+.content {
+  width: 49%;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* mobile responsive properties for text content in home page */
+.resMobileContent {
+  width: 50%;
+  min-width: 280px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+/* sub div in side content */
+.description {
+  width: 80%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: 100px 0 0 0;
+}
+
+.description :nth-child(n) {
+  font-size: 50px;
+  color: #dadddf;
+}
+
+.description :nth-child(2) span {
+  color: #131411;
+}
+
+/* .description :nth-child(3) span {
+
+} */
+.description .typeAnimation :nth-child(n) {
+  color: #131411;
+}
+
+/* THEME CHANGE */
+.description .typeAnimationTheme :nth-child(n) {
+  color: #6d8654;
+}
+
+/* responsive properties for home page text */
+.resDescription {
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: 100px 0 0 0;
+  padding: 0 0 0 200px;
+}
+
+.resDescription :nth-child(n) {
+  font-size: 35px;
+  color: #dadddf;
+}
+
+.resDescription :nth-child(2) span {
+  color: #131411;
+}
+
+.resDescription .typeAnimation :nth-child(n) {
+  color: #131411;
+}
+
+/* THEME CHANGE */
+.description .typeAnimationTheme :nth-child(n) {
+  color: #6d8654;
+}
+
+/* mobile responsive text content in content div*/
+.mobileResDescription {
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: 50px 0 0 0;
+}
+
+.mobileResDescription :nth-child(n) {
+  font-size: 25px;
+  color: #dadddf;
+}
+
+.mobileResDescription :nth-child(2) span {
+  color: #131411;
+}
+
+.mobileResDescription.typeAnimation :nth-child(n) {
+  color: #131411;
+}
+
+/* THEME CHANGE */
+.description .typeAnimationTheme :nth-child(n) {
+  color: #6d8654;
+}
+
+/* Image section in the homepage */
+.imageSection {
+  width: 50%;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+
+.image {
+  width: 80%;
+  height: auto;
+}
+
+/* responsive image section */
+.resImageSection {
+  width: 50%;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+
+.resImage {
+  width: 100%;
+  height: auto;
+}
+
+/* properties for mobile view */
+.mobileResImageSection {
+  width: 50%;
+  min-width: 280px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
   margin-top: 100px;
 }
-/* content in the top Image div */
-.contentSection {
-  border: 2px solid green;
-  width: 500px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 0 100px;
-}
 
-.contentSection :nth-child(n) {
-  font-size: 30px;
-}
-
-/* content section media query for tab */
-.tabResponseContentSection {
-  border: 2px solid rgb(128, 6, 0);
-  width: 320px;
-  min-width: 280px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 0 100px;
-}
-.tabResponseContentSection :nth-child(n) {
-  font-size: 25px;
-}
-
-/* content section media qurery for mobile */
-.mobileResponseContentSection {
-  border: 2px solid green;
-  width: 280px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.mobileResponseContentSection :nth-child(n) {
-  font-size: 20px;
-}
-
-/* image div in the topImage section */
-.imageSection {
-  border: 2px solid green;
-  width: 500px;
-  min-width: 280px;
-  height: 400px;
-  z-index: -1;
-  margin-right: 100px;
-}
-
-.imageSection img {
+.mobileResImage {
   width: 100%;
-  min-width: 280px;
-  height: 400px;
-  object-fit: cover;
-}
-/* image section media query for tab*/
-.tabResponseImageSection {
-  border: 5px solid rgb(128, 0, 117);
-  width: 300px;
-  min-width: 280px;
-  height: 300px;
-  z-index: -1;
-  margin: 0 100px 0 0;
+  height: auto;
 }
 
-.tabResponseImageSection img {
-  width: 300px;
-  height: 300px;
-  min-height: 200px;
-  object-fit: cover;
-}
+/* Home page ends */
 
-/* image section media query for mobile*/
-.mobileResponseImageSection {
-  border: 2px solid green;
-  width: 280px;
-  height: 300px;
-  z-index: -1;
-}
-
-.mobileResponseImageSection img {
-  width: 280px;
-  height: 300px;
-  min-height: 200px;
-  object-fit: cover;
-}
-/* about card section in the home page */
-.aboutSection {
-  border: 2px solid green;
+/* About page starts */
+.aboutPage {
   width: 100%;
-  min-width: 280px;
-  height: fit-content;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  background-color: #6d8654;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutTextSection {
+  width: 50%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
-/* card inside about div */
-.aboutCard {
+.aboutTextArea {
   width: 90%;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  padding: 20px;
+  margin: 100px 0 0 0;
 }
 
-.aboutCard span {
+.aboutTextArea :nth-child(1) {
   font-size: 35px;
-  text-decoration: underline;
-  text-decoration-color: green;
-}
-.aboutCard :nth-child(2) {
-  font-size: 25px;
-  padding: 20px;
-  text-decoration: none;
+  color: #131411;
 }
 
-.aboutCard :nth-child(3) {
+.aboutTextArea :nth-child(2) {
+  font-size: 30px;
+  color: #dadddf;
+}
+
+/* media query @ 1320px */
+.aboutResTextArea {
+  width: 80%;
+  height: fit-content;
+}
+
+.aboutResTextArea :nth-child(1) {
   font-size: 25px;
+  color: #131411;
   padding: 20px;
 }
 
-/* Mobile responsive about card */
-.aboutCardMobile{
+.aboutResTextArea :nth-child(2) {
+  font-size: 20px;
+  color: #dadddf;
+  padding: 20px;
+}
+
+.buttonSection {
   width: 80%;
   height: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 20px;
+  gap: 5rem;
 }
 
-.aboutCardMobile span {
-  font-size: 25px;
-  text-decoration: underline;
-  text-decoration-color: green;
-}
-
-.aboutCardMobile span 
-  :nth-child(2) {
-  font-size: 20px;
-  padding: 20px;
-  text-decoration: none;
-}
-
-.aboutCardMobile span 
-  :nth-child(3) {
-  font-size: 20px;
-  padding: 50px;
-}
-
-
-/* to download resume  */
-.resumeButton {
-  width: fit-content;
-  height: fit-content;
-  margin: 0 0 20px 0;
-}
-
-/* Page 2 Skills */
-.skillPage {
-  border: 2px solid green;
-  width: 100%;
-  min-width: 280px;
-  height: fit-content;
+.aboutImageSection {
+  width: 49%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutPageImage {
+  width: 80%;
+  height: 80%;
+  border: 5px solid #131411;
+  border-radius: 20px;
+  margin: 100px 0 0 0;
+  object-fit: cover;
+}
+
+.aboutPageImageDarkTheme {
+  width: 80%;
+  height: 80%;
+  border: 5px solid #131411;
+  border-radius: 20px;
+  margin: 100px 0 0 0;
+  object-fit: cover;
+}
+
+/* media query @ 755px*/
+.resAboutPage {
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  background-color: #6d8654;
+  display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin: 0 0 5rem 0;
 }
-/* skill page title */
-.skillPage span {
-  font-size: 35px;
-  text-decoration: underline;
-  text-decoration-color: green;
+
+.resAboutTextSection {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-/* Skills images section */
-.skillImages {
-  border: 2px solid green;
-  width: 80%;
+
+.resAboutTextArea {
+  width: 90%;
+  height: fit-content;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.resAboutTextArea :nth-child(1) {
+  font-size: 25px;
+  color: #131411;
+}
+
+.resAboutTextArea :nth-child(2) {
+  font-size: 20px;
+  color: #dadddf;
+  padding: 20px;
+}
+
+.resAboutImageSection {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resAboutPageImage {
+  width: 90%;
+  height: 90%;
+  border: 5px solid #131411;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* media query ends */
+
+/* About page ends */
+
+/* Expertise page starts */
+.expertisePage {
+  width: 100%;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  background-color: #6d8654;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.expertisePageContent {
+  width: 95%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expertiseTitle {
+  width: 100%;
+  min-width: 280px;
+  height: 50px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expertiseTitle span {
+  font-size: 40px;
+  color: #131411;
+}
+
+.expertiseImageSection {
+  width: 95%;
   min-width: 280px;
   height: fit-content;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.skillImages :nth-child(n) {
+.expertiseImageSection img {
   width: 200px;
   height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
 }
+
+.titles {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Expertise page ends */
+
+/* work page starts */
+.workPage {
+  width: 100%;
+  height: 100vh;
+  flex-wrap: wrap;
+  background-color: #6d8654;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* work page ends */
+
+/* Contact page starts */
+.contactPage {
+  width: 100%;
+  height: 100vh;
+  flex-wrap: wrap;
+  background-color: #6d8654;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contact page ends */

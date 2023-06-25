@@ -1,217 +1,274 @@
+import About from "./About";
 import "./App.css";
+import Contact from "./Contact";
+import Expertise from "./Expertise";
 import Home from "./Home";
-import { IconButton, Paper, useMediaQuery } from "@mui/material";
+import Work from "./Work";
+import { Button, Paper, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
-import logo from "./assets/Images/Logo/selvam logo.png";
-import Button from "@mui/material/Button";
 import { motion } from "framer-motion";
+import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import Skills from "./Skills";
-
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+// 6D8654
 function App() {
-  const [transition, setTransition] = useState(0);
-
-  const scroll = () => {
-    if (window.scrollY >= 500) {
-      setTransition(true);
-    } else if (window.scrollY <= 700) {
-      setTransition(false);
-    }
-  };
-
-  window.addEventListener("scroll", scroll);
-
-  console.log(window.scrollY);
-  const navOptions = [
+  const navBottons = [
     {
       name: "Home",
-      link: "home",
-      transDelay: "0.2",
+      transDelay: 0.2,
+      linkTo: "/",
     },
     {
-      name: "Skills",
-      link: "skills",
-      transDelay: "0.5",
+      name: "About",
+      transDelay: 0.4,
+      linkTo: "about",
     },
     {
-      name: "Projects",
-      link: "project",
-      transDelay: "0.8",
+      name: "Expertise",
+      transDelay: 0.6,
+      linkTo: "expertise",
+    },
+    {
+      name: "Work",
+      transDelay: 0.8,
+      linkTo: "work",
     },
     {
       name: "Contact",
-      link: "contact_me",
-      transDelay: "1.2",
+      transDelay: 1,
+      linkTo: "contact",
     },
   ];
 
-  const navbarWidth = useMediaQuery("(min-width:970px)");
+  const resNavbar = useMediaQuery("(min-width:1360px)");
+  const mobileResNavBar = useMediaQuery("(min-width:900px)");
+
+  const scrollforAboutPage = () => {
+    if (window.scrollY >= 600) {
+      setaboutTransition(true);
+    } else if (window.scrollY <= 600) {
+      setaboutTransition(false);
+    }
+  };
+
+  const scrollforExpertise = () => {
+    if (window.scrollY >= 1000) {
+      setexpertiseTransition(true);
+    } else if (window.scrollY <= 1000) {
+      setexpertiseTransition(false);
+    }
+  };
+
+  window.addEventListener("scroll", scrollforAboutPage);
+  window.addEventListener("scroll", scrollforExpertise);
+  console.log(window.scrollY);
 
   const [dropDown, setDropDown] = useState(false);
+  const [theme, setTheme] = useState(false);
+  const [aboutTransition, setaboutTransition] = useState(false);
+  const [expertiseTransition, setexpertiseTransition] = useState(false);
+  console.log(aboutTransition);
+  console.log(expertiseTransition);
 
   return (
     <div>
-      <Paper
-        style={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-        elevation={8}
-        className="navBar"
+      <div
+        className={
+          mobileResNavBar == true ? "navBarSection" : "resMobileNavBarSection"
+        }
       >
-        <motion.div
-          className="logoSection"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1.2,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-        >
-          <div>
-            <img src={logo} alt="SK" />
-          </div>
-        </motion.div>
-        {navbarWidth == true ? (
-          <div className="optionsSection">
-            {navOptions.map((options) => (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.8,
-                  delay: options.transDelay,
-                  ease: [0, 0.71, 0.2, 1.01],
-                }}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <a
-                    href={`#${options.link}`}
-                    className="nav-link scrollto"
-                    onClick={() => setParams(options.link)}
-                  >
-                    <Paper elevation={8}>
-                      <Button
-                        className="navOptions"
-                        style={{
-                          fontFamily: "Poppins",
-                          fontSize: "20px",
-                          transition: "1s",
-                        }}
-                        variant="text"
-                        color="success"
-                      >
-                        {options.name}
-                      </Button>
-                    </Paper>
-                  </a>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className="responsiveNavOptions">
-            <div className="menuButtonSection">
-              {dropDown == false ? (
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Paper elevation={6}>
-                    <IconButton onClick={() => setDropDown(true)}>
-                      <MenuIcon />
-                    </IconButton>
-                  </Paper>
-                </motion.div>
-              ) : (
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Paper elevation={6}>
-                    <IconButton onClick={() => setDropDown(false)}>
-                      <MenuOpenIcon />
-                    </IconButton>
-                  </Paper>
-                </motion.div>
-              )}
-            </div>
-            {dropDown == true ? (
+        {mobileResNavBar == true ? (
+          <Paper
+            className={resNavbar == true ? "navBar" : "resNavBar"}
+            style={
+              theme != true
+                ? { backgroundColor: "#C9B7A7" }
+                : { backgroundColor: "#E9C893" }
+            }
+            elevation={8}
+          >
+            {navBottons.map((options) => (
               <motion.div
                 className="box"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.3,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: "spring",
-                    damping: 10,
-                    stiffness: 90,
-                    restDelta: 0.001,
-                  },
-                }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Paper elevation={8}>
-                  <div className="menuOptionsSection">
-                    {navOptions.map((options) => (
-                      <motion.div
-                        className="box"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                          duration: 0.8,
-                          delay: options.transDelay,
-                          ease: [0, 0.71, 0.2, 1.01],
-                        }}
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.2 }}
-                          whileTap={{ scale: 0.9 }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 400,
-                            damping: 17,
-                          }}
-                        >
-                          <Paper
-                            elevation={6}
-                            style={{ margin: "10px 0 10px 0" }}
-                          >
-                            <Button
-                              className="menuOptions"
-                              style={{
-                                fontFamily: "Poppins",
-                                fontSize: "20px",
-                                transition: "1s",
-                                width: "120px",
-                              }}
-                              variant="text"
-                              color="success"
-                            >
-                              {options.name}
-                            </Button>
-                          </Paper>
-                        </motion.div>
-                      </motion.div>
-                    ))}
-                  </div>
+                <Paper elevation={8} style={{ backgroundColor: "#987862" }}>
+                  <a href={`#${options.linkTo} `} className="nav-link scrollto">
+                    <Button
+                      className={resNavbar == true ? "resButtons" : "buttons"}
+                      style={
+                        resNavbar == true
+                          ? {
+                              fontSize: "18px",
+                              fontFamily: "Poppins",
+                              color: "#1E392A",
+                            }
+                          : {
+                              fontSize: "15px",
+                              fontFamily: "Poppins",
+                              color: "#1E392A",
+                            }
+                      }
+                    >
+                      {options.name}
+                    </Button>
+                  </a>
                 </Paper>
               </motion.div>
-            ) : (
-              ""
-            )}
+            ))}
+            <motion.div
+              className="box"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Paper
+                elevation={8}
+                className="themeButton"
+                style={{ backgroundColor: "#987862" }}
+              >
+                {theme != true ? (
+                  <IconButton onClick={() => setTheme(true)}>
+                    <DarkModeIcon />
+                  </IconButton>
+                ) : (
+                  <IconButton onClick={() => setTheme(false)}>
+                    <LightModeIcon />
+                  </IconButton>
+                )}
+              </Paper>
+            </motion.div>
+          </Paper>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              padding: "20px",
+              gap: "1rem",
+            }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Paper elevation={8}>
+                {dropDown == false ? (
+                  <IconButton
+                    onClick={() => setDropDown(true)}
+                    aria-label="menu"
+                    size="large"
+                  >
+                    <MenuIcon fontSize="inherit" />
+                  </IconButton>
+                ) : (
+                  <IconButton
+                    onClick={() => setDropDown(false)}
+                    aria-label="menu open"
+                    size="large"
+                  >
+                    <MenuOpenIcon fontSize="inherit" />
+                  </IconButton>
+                )}
+              </Paper>
+            </motion.div>
+            <motion.div
+              className="box"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Paper
+                elevation={8}
+                className="themeButton"
+                style={{ backgroundColor: "#987862" }}
+              >
+                {theme != true ? (
+                  <IconButton onClick={() => setTheme(true)}>
+                    <DarkModeIcon />
+                  </IconButton>
+                ) : (
+                  <IconButton onClick={() => setTheme(false)}>
+                    <LightModeIcon />
+                  </IconButton>
+                )}
+              </Paper>
+            </motion.div>
           </div>
         )}
-      </Paper>
 
-      <Home></Home>
-      <Skills displaySkills={transition}></Skills>
+        {dropDown == true ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1,
+              ease: [0, 0.71, 0.2, 1.01],
+              scale: {
+                type: "spring",
+                damping: 10,
+                stiffness: 100,
+                restDelta: 0.001,
+              },
+            }}
+          >
+            <Paper
+              elevation={8}
+              className="dropDown"
+              onBlur={() => setDropDown(false)}
+            >
+              {navBottons.map((options) => (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    delay: options.transDelay,
+                    duration: 1,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                      type: "spring",
+                      damping: 10,
+                      stiffness: 100,
+                      restDelta: 0.001,
+                    },
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <a
+                      href={`#${options.linkTo} `}
+                      className="nav-link scrollto"
+                    >
+                      <Button>
+                        {" "}
+                        <Paper elevation={4} className="dropDownOption">
+                          {options.name}
+                        </Paper>
+                      </Button>
+                    </a>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </Paper>
+          </motion.div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="pageSection">
+        <Home changeTheme={theme}></Home>
+        <About displayContent={aboutTransition} changeTheme={theme}></About>
+        <Expertise displayContent={expertiseTransition} changeTheme={theme}></Expertise>
+        <Work></Work>
+        <Contact></Contact>
+      </div>
     </div>
   );
 }
