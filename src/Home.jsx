@@ -1,11 +1,24 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import myImage from "../src/assets/Images/Profile image/myImage-removebg-preview.png";
-import { useMediaQuery } from "@mui/material";
-
+import { Button, Paper, useMediaQuery } from "@mui/material";
+import { motion } from "framer-motion";
+import gitHub from "../src/assets/Images/Icons/github.png";
+import linkedIn from "../src/assets/Images/Icons/linkedin.png";
 function Home({ changeTheme }) {
   const resHomepage = useMediaQuery("(min-width:1140px)");
   const mobileReshomepage = useMediaQuery("(min-width:825px)");
+
+  const socialMedia = [
+    {
+      image: gitHub,
+      link: "https://github.com/Selvam6994?tab=repositories",
+    },
+    {
+      image: linkedIn,
+      link: "https://www.linkedin.com/in/s-selvam-17b141240/",
+    },
+  ];
   return (
     <div
       id="/"
@@ -24,8 +37,8 @@ function Home({ changeTheme }) {
             resHomepage == true
               ? "description"
               : mobileReshomepage == true
-                ? "resDescription"
-                : "mobileResDescription"
+              ? "resDescription"
+              : "mobileResDescription"
           }
         >
           <span>Hi!</span>
@@ -39,13 +52,12 @@ function Home({ changeTheme }) {
             </span>
           </span>
           <span>
-            {/* typeAnimation */}I
+            I{" "}
             <span
               className={
                 changeTheme == true ? "typeAnimationTheme" : "typeAnimation"
               }
             >
-              {" "}
               <TypeAnimation
                 sequence={["Design", 1000, "Develop", 1000]}
                 wrapper="span"
@@ -56,14 +68,62 @@ function Home({ changeTheme }) {
             web apps
           </span>
         </div>
+        <div
+          className={
+            mobileReshomepage == true
+              ? "socialIconSection"
+              : "resSocialIconSection"
+          }
+        >
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <a
+              href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new"
+              target="blank"
+              style={{ textDecoration: "none" }}
+            >
+              <Paper
+                elevation={8}
+                className="contactMe"
+                style={
+                  changeTheme != true
+                    ? { backgroundColor: "#C9B7A7" }
+                    : { backgroundColor: "#E9C893" }
+                }
+              >
+                <Button style={{ color: "#1E392A" }}>Contact Me</Button>
+              </Paper>
+            </a>
+          </motion.div>
+          {socialMedia.map((media) => (
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <a href={media.link} target="blank">
+                <img
+                  className={
+                    mobileReshomepage == true ? "mediaImage" : "resMediaImage"
+                  }
+                  src={media.image}
+                  alt="github"
+                />
+              </a>
+            </motion.div>
+          ))}
+        </div>
       </div>
       <div
         className={
           resHomepage == true
             ? "imageSection"
             : mobileReshomepage == true
-              ? "resImageSection"
-              : "mobileResImageSection"
+            ? "resImageSection"
+            : "mobileResImageSection"
         }
       >
         <img
@@ -71,8 +131,8 @@ function Home({ changeTheme }) {
             resHomepage == true
               ? "image"
               : mobileReshomepage == true
-                ? "resImage"
-                : "mobileResImage"
+              ? "resImage"
+              : "mobileResImage"
           }
           src={myImage}
           alt="SK Image"

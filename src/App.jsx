@@ -91,7 +91,6 @@ function App() {
           >
             {navBottons.map((options) => (
               <motion.div
-                className="box"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -265,9 +264,12 @@ function App() {
       <div className="pageSection">
         <Home changeTheme={theme}></Home>
         <About displayContent={aboutTransition} changeTheme={theme}></About>
-        <Expertise displayContent={expertiseTransition} changeTheme={theme}></Expertise>
+        <Expertise
+          displayContent={expertiseTransition}
+          changeTheme={theme}
+        ></Expertise>
         <Work changeTheme={theme}></Work>
-        <Contact></Contact>
+        <Contact changeTheme={theme}></Contact>
       </div>
     </div>
   );

@@ -200,6 +200,30 @@ html {
   color: #6d8654;
 }
 
+/* social icons and contact button */
+.socialIconSection {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contactMe {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mediaImage {
+  width: 80px;
+}
+
+/* .socialIconSection :nth-child(3) {
+  width: 80px;
+} */
+
 /* responsive properties for home page text */
 .resDescription {
   width: 100%;
@@ -231,6 +255,18 @@ html {
   color: #6d8654;
 }
 
+.resSocialIconSection {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resMediaImage {
+  width: 40px;
+}
+
 /* mobile responsive text content in content div*/
 .mobileResDescription {
   width: 100%;
@@ -259,6 +295,8 @@ html {
 .mobileResDescription .typeAnimationTheme :nth-child(n) {
   color: #6d8654;
 }
+
+/* contact me button */
 
 /* Image section in the homepage */
 .imageSection {
@@ -568,6 +606,7 @@ html {
   align-items: center;
   gap: 1rem;
 }
+
 /* media query @900px */
 .myWork {
   width: 100%;
@@ -592,10 +631,12 @@ html {
   color: #131411;
   font-size: 40px;
 }
+
 .myWorkImagePaper {
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
 }
+
 /* media query @900px */
 .resMyWorkImagePaper {
   width: 100%;
@@ -604,8 +645,9 @@ html {
 
 .myWorkImage {
   width: 100%;
-  height: 100%;
+  height: 50%;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .aboutWork {
@@ -646,9 +688,10 @@ html {
   font-size: 25px;
   color: #dadddf;
 }
+
 .visitWork {
-  width: 150px;
-  height: 50px;
+  width: 90px;
+  height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -656,15 +699,16 @@ html {
 }
 
 .visitWork :nth-child(1) {
-  font-size: 25px;
+  font-size: 12px;
   color: #1e392a;
 }
+
 /* work page ends */
 
 /* Contact page starts */
 .contactPage {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   flex-wrap: wrap;
   background-color: #6d8654;
   display: flex;
@@ -673,4 +717,125 @@ html {
   align-items: center;
 }
 
+.contactImageSection {
+  width: 700px;
+  height: 100vh;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactImageSection img {
+  width: 80%;
+  border: 5px solid #131411;
+  border-radius: 20px;
+}
+
+/* @1400px  */
+.resContactImageSection {
+  margin-top: 100px;
+  width: 70%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.resContactImageSection img {
+  width: 80%;
+  border: 5px solid #131411;
+  border-radius: 20px;
+}
+
+.contactSection {
+  width: 50%;
+  height: fit-content;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 2rem;
+  padding-top: 80px;
+}
+
+.contactDescription {
+
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.iconSection {
+
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconSection img {
+  width: 50px;
+}
+/* @580px */
+
+.resIconSection {
+
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resIconSection img {
+  width: 30px;
+}
+.textArea {
+
+  width: 75%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.textArea :nth-child(1) {
+  font-size: 25px;
+  color: #131411;
+}
+
+.textArea :nth-child(2) {
+  font-size: 20px;
+  color: #dadddf;
+}
+
+/* @580 px */
+.resTextArea{
+  width: 75%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.resTextArea :nth-child(1) {
+  font-size: 15px;
+  color: #131411;
+}
+
+.resTextArea :nth-child(2) {
+  font-size: 12px;
+  color: #dadddf;
+}
 /* Contact page ends */
