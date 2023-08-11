@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 import webImage from "../src/assets/Images/Page Images/web-design.jpg";
-import resume from "/resume/My resume.pdf";
+import resume from "/resume/Selvakumar CV.pdf";
 function About({ changeTheme, displayContent }) {
   const mobileResAboutpage = useMediaQuery("(min-width:755px)");
   const resAboutTextSection = useMediaQuery("(min-width:1320px)");
