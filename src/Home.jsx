@@ -12,11 +12,11 @@ function Home({ changeTheme }) {
   const socialMedia = [
     {
       image: gitHub,
-      link: "https://github.com/Selvam6994?tab=repositories",
+      link: "https://github.com/Selvam6994",
     },
     {
       image: linkedIn,
-      link: "https://www.linkedin.com/in/s-selvam-17b141240/",
+      link: "https://www.linkedin.com/in/selva-kumar-17b141240/",
     },
   ];
   return (
