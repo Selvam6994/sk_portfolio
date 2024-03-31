@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-// 6D8654
+
 function App() {
   const navBottons = [
     {
@@ -63,14 +63,11 @@ function App() {
 
   window.addEventListener("scroll", scrollforAboutPage);
   window.addEventListener("scroll", scrollforExpertise);
-  console.log(window.scrollY);
 
   const [dropDown, setDropDown] = useState(false);
   const [theme, setTheme] = useState(false);
   const [aboutTransition, setaboutTransition] = useState(false);
   const [expertiseTransition, setexpertiseTransition] = useState(false);
-  console.log(aboutTransition);
-  console.log(expertiseTransition);
 
   return (
     <div>

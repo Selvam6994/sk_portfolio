@@ -98,7 +98,7 @@ function About({ changeTheme, displayContent }) {
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <a href={resume} download>
+                <a href="https://drive.google.com/file/d/1PSWSwpcBJiRvRfjOyv-ZvVfIGIOMi9rA/view?usp=drive_link" target="blank">
                   <Paper
                     elevation={16}
                     style={
