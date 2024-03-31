@@ -62,7 +62,7 @@ function About({ changeTheme, displayContent }) {
               <p>
                 A budding software professional in the field of IT, I am
                 interested in developing my skills as a web designer and
-                developer to expand my skill set while contributing to the
+                developer (MERN Stack) to expand my skill set while contributing to the
                 organization's success. I am easily inspired, and I like to keep
                 learning, challenge myself, and do interesting things that
                 matter to me.
