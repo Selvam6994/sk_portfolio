@@ -86,8 +86,8 @@ function App() {
             }
             elevation={8}
           >
-            {navBottons.map((options) => (
-              <motion.div
+            {navBottons.map((options,index) => (
+              <motion.div key={index}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -217,8 +217,8 @@ function App() {
               className="dropDown"
               onBlur={() => setDropDown(false)}
             >
-              {navBottons.map((options) => (
-                <motion.div
+              {navBottons.map((options,index) => (
+                <motion.div key={index}
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{

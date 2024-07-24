@@ -69,8 +69,8 @@ function Contact({ changeTheme }) {
         />
       </div>
       <div className="contactSection">
-        {contactText.map((details) => (
-          <div className="contactDescription">
+        {contactText.map((details,index) => (
+          <div className="contactDescription" key={index}>
             <div
               className={
                 mobileResContactDetails == true
@@ -96,8 +96,8 @@ function Contact({ changeTheme }) {
             </div>
           </div>
         ))}
-        {socialMedia.map((media) => (
-          <motion.div
+        {socialMedia.map((media,index) => (
+          <motion.div key={index}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}

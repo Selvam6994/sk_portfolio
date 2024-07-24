@@ -78,9 +78,9 @@ function Expertise({ changeTheme, displayContent }) {
           </span>
         </div>
         <div className="expertiseImageSection">
-          {expertiseImages.map((skills) =>
+          {expertiseImages.map((skills,index) =>
             displayContent == true ? (
-              <motion.div
+              <motion.div key={index}
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
@@ -106,7 +106,7 @@ function Expertise({ changeTheme, displayContent }) {
                 </div>
               </motion.div>
             ) : (
-              ""
+              null
             )
           )}
         </div>

@@ -98,8 +98,8 @@ function Home({ changeTheme }) {
               </Paper>
             </a>
           </motion.div>
-          {socialMedia.map((media) => (
-            <motion.div
+          {socialMedia.map((media,index) => (
+            <motion.div key={index}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
